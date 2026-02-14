@@ -3,15 +3,15 @@
 library(readxl)
 library(dplyr)
 
-# read the data from the Excel file
-RawData = read_excel("/Users/eraich/Downloads/Copy of BioRep4_quant_plus_cAMP_round2.xlsx") # Cytation 5 data output 
-treatment = read.csv("/Users/eraich/Downloads/Practice.csv",header=FALSE) # .csv file listing treatment names in column 1
+# upload raw data file and treatment name file
+RawData = read_excel(file.choose()) # select .xlxs file (Cytation 5 data file)
+treatment = read.csv(file.choose(),header=FALSE) # select .csv file with treatment names listed in column 1
 names(treatment)[1]<-paste("Treatment") # renaming treatment variable column
 
 # convert data to matrix
 rawdata = as.matrix(RawData) 
 
-# find the indices where the first column equals 1 (indicating where the start of each table/"image" is)
+# find the indices where the first column equals 1 (indicating the start of each treatment table/"image")
 num_images = which(rawdata[, 1] == 1)
 
 # initialize an empty list to store the tables as a data list
@@ -23,7 +23,7 @@ for (i in 1:(length(num_images) - 1)) {
   tables[[i]] = image
 }
 
-# process each table
+# process each image table
 for (i in 1:length(tables)) {
   image = tables[[i]]
   
