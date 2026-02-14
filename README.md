@@ -1,6 +1,13 @@
 # CellFateQuant
 Cell Fate Quantification Code
 
+The Cell Fate Quantification code determines cell type proportions of DAPI+ human iPSC-derived midbrain neural progenitor cells from Biotek Cytation5 Cell Imaging Multimode Reader fluorescent intensities. 
+To use this code, two files are required:
+(1) a .xlsx file containing the raw data of fluorescent intensities from the Cytation5 
+(2) a .csv file containing the all of the treatment groups included in the raw data file, with each treatment name listed in column 1 of the file.
+
+The code determines cell type as follows:
+
 For a given row, if the sum of the following 3 columns = 0, then the row was completely deleted from the table.
 
 •	“Mean_2[Tsf[ZProj[GFP469,525]]]” – aka the fluorescently green cells, which is stained for the protein Nestin, a marker of a neural progenitor cell
