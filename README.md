@@ -4,9 +4,9 @@ Cell Fate Quantification Code
 The Cell Fate Quantification code determines cell type proportions of DAPI+ human iPSC-derived midbrain neural progenitor cells from Biotek Cytation5 Cell Imaging Multimode Reader fluorescent intensities. 
 To use this code, two files are required:
 
-(1) a .xlsx file containing the raw data of fluorescent intensities from the Cytation5 
+(1) a .xlsx file containing the raw data of fluorescent intensities from the Cytation5 (see Test_Data.xlsx for example)
 
-(2) a .csv file containing the all of the treatment groups included in the raw data file, with each treatment name listed in column 1 of the file.
+(2) a .csv file containing the all of the treatment groups included in the raw data file, with each treatment name listed in column 1 of the file (see Test_Treatment.csv for example).
 
 The code determines cell type as follows:
 
